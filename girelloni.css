@@ -64,6 +64,10 @@ body {
     height: 100vh;
 }
 
+div {
+  overflow: hidden; /* per evitare che le immagini sbordino
+                       quando la finestra e' troppo piccola */
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * ~~~Text styles~~~                                         *
@@ -85,7 +89,8 @@ body {
 }
 
 .footer {
-  color: var(--solar-orange-color);
+  /* color: var(--solar-orange-color); */
+  color: var(--solar-base03-color);
   background-color: var(--solar-base2-color);
   font-size: x-large;
   border-radius: 10px;
@@ -141,12 +146,23 @@ body {
   font-variant: small-caps;
 }
 
+.inevidence-light {
+  font-size: x-large;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
 .normal {
   font-size: x-large;
   font-weight: normal;
-  /* font-variant: small-caps; */
-
 }
+
+.italic {
+  font-size: x-large;
+  font-weight: normal;
+  font-style: italic;
+}
+
 
 .hidden {
   display: none;
@@ -171,19 +187,32 @@ a {
 }
 
 .divlight a {
-  font-variant: small-caps;
-  color: var(--solar-blue-color);
+  color: var(--solar-orange-color);
 }
 
 .divdark a {
   /* font-variant: small-caps; */
-  color: var(--solar-base03-color);
+  color: var(--solar-base3-color);
 }
 
 .divmap a {
   font-size: x-small;
   color: black;
   
+}
+
+.header a  {
+  color: var(--solar-orange-color);
+  background-color: var(--solar-base2-color);
+  font-size: xx-large;
+  border-radius: 10px;
+  /* margin: 20px; */
+  /* padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm; */
+  text-align: center;
+
 }
 
 .mapLayerChooser {
