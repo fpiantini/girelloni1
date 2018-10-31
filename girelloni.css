@@ -64,10 +64,14 @@ body {
     height: 100vh;
 }
 
-div {
-  overflow: hidden; /* per evitare che le immagini sbordino
-                       quando la finestra e' troppo piccola */
+/* per evitare che le immagini sbordino *
+ * quando la finestra e' troppo piccola */
+/* 
+al momento non utilizzato 
+div.imageready {
+  overflow: hidden;
 }
+*/
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * ~~~Text styles~~~                                         *
@@ -779,6 +783,9 @@ img.rightfloat {
    margin-left: 20px;
 }
 
+img.autowidth {
+  width: 100%;
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * ~~~Hyperlinks~~~                                          *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
