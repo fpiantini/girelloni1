@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<meta charset="utf-8"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+  <head>
+    <title>
+    Girelloni.net - Template per pagina percorso
+    </title>
+
+    <!-- Style sheet inclusion -->
+    <link rel="stylesheet" type="text/css" href="../girelloni.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""/>
+    <link rel="stylesheet" type="text/css" href="./maps.css" />
+
+    <!-- Meta informations. Change to actual values -->
+    <meta name="author" content="Rod McBan" />
+    <meta name="revised" content="Rod McBan, 16/9/2018" />
+    <meta name="generator" content="Text Editor" />
+    <meta name="description" content="Norstrilia Home Page" />
+    <meta name="keywords" content="Norstrilia" />
+    <!-- End of Meta informations -->
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+      integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+      crossorigin="">
+    </script>
+
+    <script src="../js/leaflet-providers.js"></script>
+    <script src="../js/gpx.min.js"></script>
+    <script type="text/javascript" src="../js/myleaflet.js"></script>
+
+  </head>
+
+
+  <body>
+
+    <div class="header" id="header">
+      <h1><a href="../index.html">Girelloni.net /</a> Template per pagina percorso</h1>
+    </div>
+
+    <!-- ************************************************************ -->
+    <!-- <div id="bodywithmenu"> -->
+    <div id="body">
+
+      <div class="divdark" id="mapbox">
+      
+        <!-- *** LA MAPPA: *** -->
+        <div class="divmap" id="mapid" style="height: 610px; width:100%"></div>
+        <!-- *** LA MAPPA: *** -->
+
+      </div>
+
+      <div class="divlight" id="mapbox">
+        <form action="#" method="post" class="mapLayerChooser" id="mapLayerChooserForm">
+          <fieldset class="mapLayerChooser">
+            <legend class="mapLayerChooser">Tipo di mappa base</legend>
+
+            <p>
+              <label><input type="radio" name="basemap" value="otm" checked="checked" /> OpenTopoMap</label>
+              <label><input type="radio" name="basemap" value="fum" /> 4UMaps</label>
+              <label><input type="radio" name="basemap" value="tf" /> ThunderForest Landscape</label>
+              <label><input type="radio" name="basemap" value="mb" /> MapBox</label>
+            </p>
+          </fieldset>
+        </form>
+
+      </div>
+      
+      <div class="divdark" id="trackInfo">
+        <p class="inevidence">
+          Informazioni sul percorso.
+        </p>
+        <p class="normal" id = "md_trackname">Nome della traccia:</p>
+        <p class="normal" id = "md_starttime">Orario di inizio:</p>
+        <p class="normal" id = "md_endtime">Orario di fine:</p>
+        <p class="normal" id = "md_totdistance">Distanza totale:</p>
+        <p class="normal hidden" id = "md_movingtime">Tempo in movimento:</p>
+        <p class="normal" id = "md_totaltime">Tempo totale:</p>
+        <p class="normal hidden" id = "md_movingpace">Ritmo medio in movimento:</p>
+        <p class="normal hidden" id = "md_movingspeed">Velocità media in movimento:</p>
+        <p class="normal" id = "md_totalspeed">Velocità media:</p>
+        <p class="normal" id = "md_elevmin">Elevazione minima:</p>
+        <p class="normal" id = "md_elevmax">Elevazione massima:</p>
+        <p class="normal" id = "md_elevgain">Guadagno in elevazione:</p>
+        <p class="normal" id = "md_elevloss">Perdita in elevazione:</p>
+        
+      </div>
+      
+    <script>
+      domap();
+    </script>
+
+    <div class="footer" id="footer">
+      <p>Una creazione del team Girelloni.net (info at girelloni dot net)</p>
+    </div>
+
+  </body>
+</html>
+
+
+
