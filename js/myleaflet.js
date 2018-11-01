@@ -1,19 +1,30 @@
-/*
-    <script>
-      myLeaflet.domap();
-    </script>
-*/
-
-
-// --- Leaflet object -----------------------------------
-var L;
+// ------------------------------------------------------
+var L, document, window;
 // ------------------------------------------------------
 
 var my_Leaflet = (function () {
   'use strict';
 
+  var treks,
+    getQueryVariable,
+    getTrackIdFromURL,
+    updatePageWithTrackInfo,
+    getRadioVal,
+    clearLayers,
+    forYouMapsLayer,
+    openTopoMapLayer,
+    thunderForestLandscapeLayer,
+    mapBoxLayer,
+    showSelectedBaseMap,
+    distanceToString,
+    timemsToString,
+    printTrackInfo,
+    showTrack,
+    showLayers,
+    redrawMap;
+
   // Available tracks:
-  var treks =
+  treks =
     [
       {
         "title": "Costeggiando l'Elsa",
@@ -108,7 +119,7 @@ var my_Leaflet = (function () {
     ];
 
   // --------------------------------------------------------------------------
-  var getQueryVariable = function (variable) {
+  getQueryVariable = function (variable) {
     var query, vars, i, pair;
     
     query = window.location.search.substring(1);
@@ -122,7 +133,7 @@ var my_Leaflet = (function () {
   };
 
   // --------------------------------------------------------------------------
-  var getTrackIdFromURL = function () {
+  getTrackIdFromURL = function () {
     var id, tid;
     
     tid = 0;
@@ -139,10 +150,8 @@ var my_Leaflet = (function () {
     return tid;
   };
   
-  
-  
   // --------------------------------------------------------------------------
-  var updatePageWithTrackInfo = function (tid) {
+  updatePageWithTrackInfo = function (tid) {
     
     document.getElementById('header').innerHTML =
       '<h1><a href="../index.html">Girelloni.net /</a> ' +
@@ -151,11 +160,9 @@ var my_Leaflet = (function () {
     document.getElementById('description').textContent =
       treks[tid - 1].description;
   };
-
-  
-  
+ 
   // --------------------------------------------------------------------------
-  var getRadioVal = function (form, name) {
+  getRadioVal = function (form, name) {
     var radios, val, i, len;
 
     radios = form.elements[name];
@@ -170,14 +177,14 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var clearLayers = function (map) {
+  clearLayers = function (map) {
     map.eachLayer(function (layer) {
       map.removeLayer(layer);
     });
   };
 
   // -------------------------------------------------------------------------
-  var forYouMapsLayer = function (L) {
+  forYouMapsLayer = function (L) {
     return L.tileLayer('https://tileserver.4umaps.com/{z}/{x}/{y}.png',
       {
         maxZoom: 17,
@@ -185,8 +192,8 @@ var my_Leaflet = (function () {
       });
   };
 
-// -------------------------------------------------------------------------
-  var openTopoMapLayer = function (L) {
+  // -------------------------------------------------------------------------
+  openTopoMapLayer = function (L) {
     return L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
       {
         maxZoom: 17,
@@ -195,7 +202,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var thunderForestLandscapeLayer = function (L) {
+  thunderForestLandscapeLayer = function (L) {
     return L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}',  {
       attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       apikey: 'e9fb11ac45734d7f9475e22de47d93e7',
@@ -204,7 +211,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var mapBoxLayer = function (L) {
+  mapBoxLayer = function (L) {
 
     var mpKey, mpUrl, mpAttrib;
   
@@ -224,7 +231,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var showSelectedBaseMap = function (L, map, basemap) {
+  showSelectedBaseMap = function (L, map, basemap) {
     clearLayers(map);
 
     switch (basemap) {
@@ -252,7 +259,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var distanceToString = function (dist, useKm) {
+  distanceToString = function (dist, useKm) {
     var retStr, n_km, n_m;
 
     // distance is in meters
@@ -271,7 +278,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var timemsToString = function (timems, printms) {
+  timemsToString = function (timems, printms) {
   
     var h, m, s, ms, retStr = '';
   
@@ -299,7 +306,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var printTrackInfo = function (gpx) {
+  printTrackInfo = function (gpx) {
   
     /* document.getElementById('md_trackname').textContent =
       'Nome della traccia: ' + gpx.get_name(); */
@@ -338,7 +345,7 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var showTrack = function (L, map, track) {
+  showTrack = function (L, map, track) {
     var gpx = track;
     new L.GPX(gpx, {
       async: true,
@@ -363,13 +370,13 @@ var my_Leaflet = (function () {
   };
 
   // -------------------------------------------------------------------------
-  var showLayers = function (L, map, basemap, track) {
+  showLayers = function (L, map, basemap, track) {
     showSelectedBaseMap(L, map, basemap);
     showTrack(L, map, track);
   };
 
   // -------------------------------------------------------------------------
-  var redrawMap = function (L, map, mapform, ddown, tfile) {
+  redrawMap = function (L, map, mapform, tfile) {
     showLayers(L, map, getRadioVal(mapform, 'basemap'), tfile);
   };
 
@@ -377,7 +384,7 @@ var my_Leaflet = (function () {
   // PUBLIC INTERFACE
   return {
     domap: function (L) {
-      var mymap, mapform, ddown, basemapRadios, i, len, tid, tfile;
+      var mymap, mapform, tid, tfile;
 
       tid = getTrackIdFromURL();
       tfile = treks[tid - 1].trackfile;
@@ -388,24 +395,23 @@ var my_Leaflet = (function () {
       mymap.scrollWheelZoom.disable();
     
       mapform = document.getElementById('mapLayerChooserForm');
-      ddown = document.getElementById('track-chooser-dropdown');
 
       // assign onclick function to radio button used
       // to select basemap
       //basemapRadios = mapform.elements['basemap'];
-      basemapRadios = mapform.elements.basemap;
+      //basemapRadios = mapform.elements.basemap;
 
-      for (i = 0, len = basemapRadios.length; i < len; i = i + 1) {
-        basemapRadios[i].addEventListener("click", function () {
-          redrawMap(L, mymap, mapform, ddown, tfile);
+      document.getElementById('layer-chooser-radios').
+        addEventListener('click', function (event) {
+          if (event.target.type === 'radio') {
+            redrawMap(L, mymap, mapform, tfile);
+          }
         }, false);
-      }
-
-      redrawMap(L, mymap, mapform, ddown, tfile);
+      
+      redrawMap(L, mymap, mapform, tfile);
     }
   };
 
-    
 }());
 
 my_Leaflet.domap(L);
