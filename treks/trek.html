@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
     <title>
-    Girelloni.net - Template per pagina percorso
+    Girelloni.net
     </title>
 
     <!-- Style sheet inclusion -->
@@ -30,8 +30,6 @@
 
     <script src="../js/leaflet-providers.js"></script>
     <script src="../js/gpx.min.js"></script>
-    <script type="text/javascript" src="../js/myleaflet.js"></script>
-
   </head>
 
 
@@ -50,7 +48,7 @@
         <!-- *** LA MAPPA: *** -->
         <div class="divmap" id="mapid" style="height: 610px; width:100%"></div>
         <!-- *** LA MAPPA: *** -->
-
+        <p id="description" class="description">Descrizione percorso</p>
       </div>
 
       <div class="divlight" id="mapbox">
@@ -73,7 +71,7 @@
         <p class="inevidence">
           Informazioni sul percorso.
         </p>
-        <p class="normal" id = "md_trackname">Nome della traccia:</p>
+        <!-- <p class="normal" id = "md_trackname">Nome della traccia:</p> -->
         <p class="normal" id = "md_starttime">Orario di inizio:</p>
         <p class="normal" id = "md_endtime">Orario di fine:</p>
         <p class="normal" id = "md_totdistance">Distanza totale:</p>
@@ -89,13 +87,11 @@
         
       </div>
       
-    <script>
-      domap('tracks/20181021_Elsa_da_Gracciano_a_Ponte_di_Spugna.gpx');
-    </script>
-
     <div class="footer" id="footer">
       <p>Una creazione del team Girelloni.net (info at girelloni dot net)</p>
     </div>
+
+      <script type="text/javascript" src="../js/myleaflet.js"></script>
 
   </body>
 </html>

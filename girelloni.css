@@ -144,6 +144,14 @@ div.imageready {
   font-size: x-small;
   
 }
+
+.description {
+  padding-top: 0.5cm;
+  font-size: x-large;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
 .inevidence {
   font-size: x-large;
   font-weight: bold;
