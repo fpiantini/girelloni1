@@ -115,7 +115,12 @@ var my_Leaflet = (function () {
         "title": "Islanda - Vesturdalur",
         "description": "Islanda - Vesturdalur: salita al Raudholar e ritorno",
         "trackfile": "tracks/20180709_Vesturdalur_Raudholar.gpx"
-      }
+      },
+      {
+        "title": "800 gradini e Calvana sud",
+        "description": "Sulla Calvana sopra Prato. 800 gradini più una facile escursione con vista sulla piana, Prato e Firenze",
+        "trackfile": "tracks/20190101_800gradini_calvana.gpx"
+      },
     ];
 
   // --------------------------------------------------------------------------
