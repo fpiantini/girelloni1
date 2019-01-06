@@ -178,6 +178,14 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Calvana"
       },
+      {
+        "title": "Monte Gennaro e Volmiano",
+        "description": "Anello sopra Legri: monte Gennaro e Volmiano",
+        "trackfile": "tracks/20190106_Legri_MonteGennaro_Volmiano.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Monte Morello"
+      },
     ];
 
 
