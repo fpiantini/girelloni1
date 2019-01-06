@@ -179,6 +179,14 @@ var my_Leaflet = (function () {
         "area": "Calvana"
       },
       {
+        "title": "Monte Morello, Circuito ad anello tra il Gualdo e le tre punte",
+        "description": "Escursione sul Morello con salita sulla prima punta e discesa dal Rompistinchi",
+        "trackfile": "tracks/20190103_Gualdo_cornacchiaccia.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Monte Morello"
+      },
+      {
         "title": "Monte Gennaro e Volmiano",
         "description": "Anello sopra Legri: monte Gennaro e Volmiano",
         "trackfile": "tracks/20190106_Legri_MonteGennaro_Volmiano.gpx",
