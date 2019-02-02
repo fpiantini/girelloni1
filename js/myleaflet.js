@@ -194,6 +194,14 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Monte Morello"
       },
+      {
+        "title": "Escursione sulla Calvana",
+        "description": "Un'escursione sul lato ovest della Calvana",
+        "trackfile": "tracks/20190120_Calvana.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Monte Morello"
+      },
     ];
 
 
