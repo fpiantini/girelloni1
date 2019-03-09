@@ -202,17 +202,31 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Monte Morello"
       },
+      {
+        "title": "Nei dintorni di Radda in Chianti",
+        "description": "Un'escursione nel Chianti nei dintorni di Radda in Chianti",
+        "trackfile": "tracks/20190224_Chianti_vicino_radda.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Chianti"
+      },
+      {
+        "title": "Artimino",
+        "description": "Un'escursione nei dintorni di Artimino",
+        "trackfile": "tracks/20190303_Artimino.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Prato"
+      },
     ];
-
-
 
   // --------------------------------------------------------------------------
   getQueryVariable = function (variable) {
     var query, vars, i, pair;
-    
+
     query = window.location.search.substring(1);
     vars = query.split("&");
-  
+
     for (i = 0; i < vars.length; i += 1) {
       pair = vars[i].split("=");
       if (pair[0] === variable) { return pair[1]; }
@@ -223,9 +237,9 @@ var my_Leaflet = (function () {
   // --------------------------------------------------------------------------
   getTrackIdFromURL = function () {
     var id, tid;
-    
+
     tid = 0;
-    
+
     // extract the id from URL
     id = getQueryVariable('id');
     if (id !== false) {
@@ -234,21 +248,21 @@ var my_Leaflet = (function () {
     if (tid <= 0 || tid > treks.length) {
       tid = 1;
     }
-    
+
     return tid;
   };
-  
+
   // --------------------------------------------------------------------------
   updatePageWithTrackInfo = function (tid) {
-    
+
     document.getElementById('header').innerHTML =
       '<h1><a href="../index.html">Girelloni.net /</a> ' +
       treks[tid - 1].title + '</h1>';
-    
+
     document.getElementById('description').textContent =
       treks[tid - 1].description;
   };
- 
+
   // --------------------------------------------------------------------------
   getRadioVal = function (form, name) {
     var radios, val, i, len;
@@ -367,12 +381,12 @@ var my_Leaflet = (function () {
 
   // -------------------------------------------------------------------------
   timemsToString = function (timems, printms) {
-  
+
     var h, m, s, ms, retStr = '';
-  
+
     s = Math.floor(timems / 1000);
     ms = Math.round(timems % 1000);
-  
+
     h = Math.floor(s / 3600);
     s = s % 3600;
     m = Math.floor(s / 60);
@@ -389,19 +403,19 @@ var my_Leaflet = (function () {
     if (printms && (ms > 0)) {
       retStr += ms + ' ms';
     }
-  
+
     return retStr;
   };
 
   // -------------------------------------------------------------------------
   printTrackInfo = function (gpx) {
-  
+
     /* document.getElementById('md_trackname').textContent =
       'Nome della traccia: ' + gpx.get_name(); */
 
     document.getElementById('md_totdistance').textContent =
       'Distanza totale: ' + distanceToString(gpx.get_distance(), true);
-  
+
     document.getElementById('md_starttime').textContent =
       'Orario di inizio: ' + gpx.get_start_time();
     document.getElementById('md_endtime').textContent =
@@ -451,9 +465,9 @@ var my_Leaflet = (function () {
     }).on('loaded', function (e) {
       var gpx = e.target;
       map.fitBounds(gpx.getBounds());
-      
+
       printTrackInfo(gpx);
-    
+
     }).addTo(map);
   };
 
@@ -542,12 +556,12 @@ var my_Leaflet = (function () {
 
       tid = getTrackIdFromURL();
       tfile = treks[tid - 1].trackfile;
-      
+
       updatePageWithTrackInfo(tid);
 
       mymap = new L.map('mapid');
       mymap.scrollWheelZoom.disable();
-    
+
       mapform = document.getElementById('mapLayerChooserForm');
 
       // assign onclick function to radio button used
@@ -561,7 +575,7 @@ var my_Leaflet = (function () {
             redrawMap(L, mymap, mapform, tfile);
           }
         }, false);
-      
+
       redrawMap(L, mymap, mapform, tfile);
     }
   };
@@ -592,3 +606,4 @@ if (document.getElementById('mapbox')) {
     </div>`;
   document.getElementById('world_treks').insertAdjacentHTML('beforeend', footer);
 }
+
