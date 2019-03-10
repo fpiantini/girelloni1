@@ -218,6 +218,14 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Prato"
       },
+      {
+        "title": "Putizze di Sasso Pisano",
+        "description": "Un'escursione nell'area geotermica di Sasso Pisano e Monterotondo Marittimo",
+        "trackfile": "tracks/20190310_PutizzeDiSassoPisano.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Colline metallifere"
+      },
     ];
 
   // --------------------------------------------------------------------------
