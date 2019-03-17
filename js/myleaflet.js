@@ -226,6 +226,14 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Colline metallifere"
       },
+      {
+        "title": "Escursione su Monte Morello basso",
+        "description": "Una sgambata sulla parte bassa di Monte Morello con partenza e ritorno a Sesto Fiorentino",
+        "trackfile": "tracks/20190315_Morello.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Monte Morello"
+      },
     ];
 
   // --------------------------------------------------------------------------
