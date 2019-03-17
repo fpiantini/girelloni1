@@ -234,6 +234,14 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Monte Morello"
       },
+      {
+        "title": "Isola d'Elba: da Zanca a PomonteEscursione su Monte Morello basso",
+        "description": "Impegnativa passeggiata all'isola d'Elba: da Zanca a Pomonte passando per Marciana e Monte Capanne",
+        "trackfile": "tracks/20170903_Zanca_Marciana_MonteCapanne_Pomonte.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Isola d'Elba"
+      },
     ];
 
   // --------------------------------------------------------------------------
