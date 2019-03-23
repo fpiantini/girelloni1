@@ -67,6 +67,14 @@ var my_Leaflet = (function () {
         "area": "Monte Morello"
       },
       {
+        "title": "Cinque escursioni sul Gran Paradiso",
+        "description": "Valle d'Aosta, Gran Paradiso - Da Valnontey a Ceresole Reale (5 giorni)",
+        "trackfile": "tracks/201808_GranParadiso.gpx",
+        "nation": "Italia",
+        "region": "Val d'Aosta",
+        "area": "Gran Paradiso"
+      },
+      {
         "title": "Valnontey - Rifugio Sella",
         "description": "Valle d'Aosta, Gran Paradiso - Da Valnontey al Rifugio Sella passando per i capanni dell'Herbetet",
         "trackfile": "tracks/20180820_Valnontey_CapanniHerbetet_RifSella.gpx",
@@ -481,7 +489,7 @@ var my_Leaflet = (function () {
         shadowUrl: 'imgs/pin-shadow.png'
       },
       polyline_options: {
-        color: 'purple',
+        color: 'darkred',
         opacity: 0.75,
         weight: 3,
         lineCap: 'round'
