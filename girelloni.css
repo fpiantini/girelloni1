@@ -136,13 +136,13 @@ div.imageready {
 .divmap {
   height: 100px;
   font-size: x-small;
-  
+
 }
 
 #mapid {
   height: 100px;
   font-size: x-small;
-  
+
 }
 
 .description {
@@ -210,7 +210,7 @@ a {
 .divmap a {
   font-size: x-small;
   color: black;
-  
+
 }
 
 .header a  {
@@ -262,25 +262,8 @@ a:active {
 
 .divmap a:hover {
   margin-right: 0;
-  
+
 }
-
-
-
-
-
-
-/*
-p {
-  font-size: small;
-  padding-left: 0.5cm;
-  padding-bottom: 0cm;
-  padding-top: 0cm;
-  padding-right: 1cm;
-  margin-bottom: 0.4cm;
-  margin-top: 0cm;
-}
-*/
 
 h1 {
 }
