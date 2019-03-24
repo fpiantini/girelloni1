@@ -250,6 +250,14 @@ var my_Leaflet = (function () {
         "region": "Toscana",
         "area": "Isola d'Elba"
       },
+      {
+        "title": "Sul monte Falterona",
+        "description": "Escursione sul monte Falterona dalla fonte del Borbotto, con passaggio sul monte Falco, lago degli Idoli e Capo d'Arno",
+        "trackfile": "tracks/20190324_Falterona.gpx",
+        "nation": "Italia",
+        "region": "Toscana",
+        "area": "Parco Foreste Casentinesi, monte Falterona e Campigna"
+      },
     ];
 
   // --------------------------------------------------------------------------
